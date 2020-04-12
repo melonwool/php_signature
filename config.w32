@@ -1,0 +1,7 @@
+ARG_ENABLE('signature', 'signature support', 'no');
+
+if (PHP_SIGNATURE != 'no') {
+	AC_DEFINE('HAVE_SIGNATURE', 1, 'signature support enabled');
+
+	EXTENSION('signature', 'signature.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
